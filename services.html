@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="{% static 'assets/images/dlcf logo.jpg' %}" type="image/x-icon">
+  <script defer>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('translate-x-full');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 relative">
+<aside id="sidebar"
+    class="fixed top-0 right-0 w-72 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-4 border-b flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="static/assets/images/ezydevs logo.png" alt="Ezydevs Tech Logo" class="h-15 w-20 rounded-full" />
+        </div>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-xl">&times;</button>
+    </div>
+    <div class="p-4">
+      <input type="text" placeholder="Search..."
+        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded focus:ring focus:ring-blue-200" />
+      <ul class="space-y-3">
+        <li><a href="#" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+        <li><a href="#features" class="block text-gray-700 hover:text-blue-600">Features</a></li>
+        <li><a href="#about" class="block text-gray-700 hover:text-blue-600">About</a></li>
+        <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="static/assets/images/ezydevs logo.png" alt="Ezydevs Tech Logo" class="h-15 w-20 rounded-full" />
+        </div>
+      <!-- {% for message in messages %}
+      <div class="text-1xl alert max-w-4xl bg-white-500 p-2 rounded">
+        <p class="text-red-500">{{message}}</p>
+      </div>
+      {% endfor %} -->
+      <nav class="hidden md:flex space-x-4">
+        <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#features" class="text-gray-700 hover:text-blue-600">Features</a>
+        <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <!-- {% if request.user.is_authenticated %}
+        <a href="{% url 'logout_user' %}" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</a>
+        {% else %} -->
+        <a href="{% url 'login_user' %}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</a>
+        <!-- {% endif %} -->
+      </nav>
+      <!-- Mobile Sidebar Toggle -->
+      <button class="md:hidden text-2xl text-gray-600 hover:text-blue-600" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+  </header>
+<!-- Services Page -->
+<section class="bg-gray-50 text-gray-800 pt-20 pb-10">
+    <div class="container mx-auto px-6">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-blue-900">Our Services</h1>
+        <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+          We offer world-class tech services to help your business thrive in a digital-first world.
+        </p>
+      </div>
+  
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <!-- Service 1 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">Web Development</h3>
+          <p class="text-sm text-gray-600">Custom, responsive websites that are fast, secure, and SEO-optimized to meet your business needs.</p>
+        </div>
+  
+        <!-- Service 2 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">Mobile App Development</h3>
+          <p class="text-sm text-gray-600">Build scalable and intuitive mobile apps on Android and iOS to engage users on the go.</p>
+        </div>
+  
+        <!-- Service 3 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">AI & Automation</h3>
+          <p class="text-sm text-gray-600">We integrate Artificial Intelligence and smart automation to streamline your business processes.</p>
+        </div>
+  
+        <!-- Service 4 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">Digital Marketing</h3>
+          <p class="text-sm text-gray-600">Grow your brand visibility and reach using strategic SEO, content, and social media marketing.</p>
+        </div>
+  
+        <!-- Service 5 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">Custom Software</h3>
+          <p class="text-sm text-gray-600">We develop tailored software for SMEs, startups, schools, and enterprise operations.</p>
+        </div>
+  
+        <!-- Service 6 -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-blue-800 mb-2">Training & Support</h3>
+          <p class="text-sm text-gray-600">Upskill your team with our practical training or let us manage your digital infrastructure.</p>
+        </div>
+      </div>
+  
+      <!-- CTA Section -->
+      <div class="bg-blue-900 text-white rounded-xl p-10 text-center shadow-lg">
+        <h3 class="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
+        <p class="mb-6 max-w-2xl mx-auto">
+          Whether you need a new website, mobile app, or full system — we’ve got the experience and passion to deliver results.
+        </p>
+        <a href="#contact" class="bg-white text-blue-900 font-semibold px-6 py-3 rounded-full hover:bg-blue-100 transition">Let’s Talk</a>
+      </div>
+  
+    </div>
+  </section>
+
+</body>
+</html>
+
+  
