@@ -1,0 +1,64 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Testimonials{% endblock %}
+
+
+{% block content %}
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">What Our Clients Are Saying</h1>
+      <p class="text-lg">Real stories from real clients who trust Ezydevs Technologies</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://i.pravatar.cc/60?img=11" class="w-12 h-12 rounded-full" alt="Client">
+            <div>
+              <h4 class="font-semibold text-blue-900">Amaka Johnson</h4>
+              <span class="text-sm text-gray-600">CEO, NaijaFashion</span>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm">“Ezydevs transformed our business. Our new website is fast, modern, and user-friendly. Highly recommended!”</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://i.pravatar.cc/60?img=22" class="w-12 h-12 rounded-full" alt="Client">
+            <div>
+              <h4 class="font-semibold text-blue-900">James Tunde</h4>
+              <span class="text-sm text-gray-600">Founder, SmartPOS Africa</span>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm">“Their team built us a custom POS system that integrates beautifully with our operations. Truly game-changing!”</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-100 rounded-xl shadow p-6 hover:shadow-lg transition">
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="https://i.pravatar.cc/60?img=31" class="w-12 h-12 rounded-full" alt="Client">
+            <div>
+              <h4 class="font-semibold text-blue-900">Chinwe Okafor</h4>
+              <span class="text-sm text-gray-600">Tech Lead, AgriSmart</span>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm">“We loved working with Ezydevs! Their attention to detail and commitment to quality is unmatched.”</p>
+        </div>
+
+        <!-- More testimonials can be added here -->
+      </div>
+    </div>
+  </section>
+
+</body>
+{% endblock %}

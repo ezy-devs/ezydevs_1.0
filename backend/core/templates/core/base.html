@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} Ezydevs Technologies {% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+  <script defer>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('translate-x-full');
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 relative">
+   
+   {% block sidebar %}
+    <aside id="sidebar"
+    class="fixed top-0 right-0 w-72 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="p-4 border-b flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="{% static 'assets/images/ezydevs logo.png' %}" alt="Ezydevs Tech Logo" class="h-15 w-20 rounded-full" />
+      </div>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-xl">&times;</button>
+    </div>
+    <div class="p-4">
+      <input type="text" placeholder="Search..."
+        class="w-full px-4 py-2 mb-4 border border-gray-300 rounded focus:ring focus:ring-blue-200" />
+      <ul class="space-y-3">
+        <li><a href="{% url 'home' %}" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+        <li><a href="{% url 'team' %}" class="block text-gray-700 hover:text-blue-600">Team</a></li>
+        <li><a href="{% url 'testimonials' %}" class="block text-gray-700 hover:text-blue-600">Testimonials</a></li>
+        <li><a href="{% url 'services' %}" class="block text-gray-700 hover:text-blue-600">Services</a></li>
+        <li><a href="{% url 'about' %}" class="block text-gray-700 hover:text-blue-600">About</a></li>
+        <li><a href="{% url 'contact' %}" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 w-full z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <img src="{% static 'assets/images/ezydevs logo.png' %}" alt="Ezydevs Tech Logo" class="h-15 w-20 rounded-full" />
+        </div>
+      <!-- {% for message in messages %}
+      <div class="text-1xl alert max-w-4xl bg-white-500 p-2 rounded">
+        <p class="text-red-500">{{message}}</p>
+      </div>
+      {% endfor %} -->
+      <nav class="hidden md:flex space-x-4">
+        <a href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="{% url 'team' %}" class="text-gray-700 hover:text-blue-600">Team</a>
+        <a href="{% url 'testimonials' %}" class="text-gray-700 hover:text-blue-600">Testimonials</a>
+        <a href="{% url 'services' %}" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a href="{% url 'about' %}" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="{% url 'contact' %}" class="text-gray-700 hover:text-blue-600">Contact</a>
+       
+        <a href="" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</a>
+      
+      </nav>
+      <!-- Mobile Sidebar Toggle -->
+      <button class="md:hidden text-2xl text-gray-600 hover:text-blue-600" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+  </header>
+  {% endblock %}
+
+  {% block content %}
+
+  {% endblock %}
+ 
+
+  <!-- Footer -->
+   {% block footer %}
+  
+  <footer id="contact" class="bg-blue-900 text-white py-10">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:justify-between gap-8">
+        
+        <!-- Company Profile -->
+        <div class="md:w-1/3">
+          <h3 class="text-2xl font-bold mb-2">Ezydevs Technologies</h3>
+          <p class="text-sm">
+            At Ezydevs, we simplify technology for African businesses by offering custom web, mobile, and AI solutions. 
+            Our mission is to make tech accessible, intelligent, and efficient for startups and enterprises across the continent.
+          </p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="md:w-1/4">
+          <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#services" class="hover:underline">Services</a></li>
+            <li><a href="#about" class="hover:underline">About Us</a></li>
+            <li><a href="#portfolio" class="hover:underline">Portfolio</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact Info -->
+        <div class="md:w-1/3">
+          <h4 class="text-lg font-semibold mb-2">Contact</h4>
+          <p class="text-sm">Phone: +234 905 070 9538</p>
+          <p class="text-sm">Email: ezydevstechnologies@gmail.com</p>
+          <p class="text-sm">Address: Gboko, Benue State, Nigeria</p>
+          
+          <!-- Social Media -->
+          <div class="flex mt-4 space-x-4">
+            <a href="https://github.com/ezy-devs" target="_blank" class="hover:text-gray-300">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.3c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1 1.7-.8 1.9-1.3.1-.7.5-1.1.9-1.3-2.6-.3-5.4-1.3-5.4-6.1 0-1.4.5-2.6 1.2-3.5-.1-.3-.5-1.7.1-3.5 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.8.2 3.2.1 3.5.8.9 1.2 2.1 1.2 3.5 0 4.8-2.8 5.8-5.5 6.1.5.4 1 .7 1.2 1.6v2.5c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            </a>
+            <a href="https://linkedin.com" class="hover:text-gray-300">
+              <!-- LinkedIn icon -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M4.98 3.5C3.34 3.5 2 4.85 2 6.5S3.34 9.5 4.98 9.5C6.62 9.5 8 8.15 8 6.5S6.62 3.5 4.98 3.5zM2.4 21.5h5.2V10H2.4v11.5zM9.3 10h4.6v1.6h.1c.6-1.1 2-2.3 4-2.3 4.3 0 5.1 2.8 5.1 6.4v5.8h-5.2V16c0-1.5 0-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4v5.6H9.3V10z"/></svg>
+            </a>
+            <a href="mailto:ezydevstechnologies@gmail.com" class="hover:text-gray-300">
+              <!-- Email icon -->
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.3 0-2 .7-2 2v12c0 1.3.7 2 2 2h16c1.3 0 2-.7 2-2V6c0-1.3-.7-2-2-2zm0 2v.5l-8 5-8-5V6h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+            </a>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Bottom Line -->
+      <div class="mt-8 text-center text-sm border-t border-white/20 pt-4">
+        © 2025 Ezydevs Technologies. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

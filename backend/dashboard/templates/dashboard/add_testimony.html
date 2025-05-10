@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Add Testimony{% endblock %}
+{% block content %}
+
+<div class="container mx-auto px-6 py-8">
+    <h1 class="text-4xl font-bold text-center text-brand mb-8">Add Testimony</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="mb-4">
+           {{ form.as_p }}
+        </div>
+
+        <div class="flex justify-center mt-6">
+            <button type="submit" class="bg-brand text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition duration-300">Submit Testimony</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

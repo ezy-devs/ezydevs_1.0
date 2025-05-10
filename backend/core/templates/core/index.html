@@ -1,0 +1,125 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Ezydevs Technologies{% endblock %}
+
+
+{% block content %}
+ <!-- Hero Section -->
+ <section class="pt-32 pb-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Smart Tech Solutions for African Businesses</h1>
+      <p class="text-lg md:text-xl mb-4">
+        We build 
+        <span id="dynamic-service" class="font-semibold transition-opacity duration-500 opacity-100 text-yellow-300">
+          web applications
+        </span> 
+        that help you grow, automate, and lead your industry.
+      </p>
+      <div class="flex justify-center space-x-4 mt-6">
+        <a href="#services" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow hover:shadow-lg transition">Get Started</a>
+        <a href="#services" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow hover:shadow-lg transition">Explore Services</a>
+      </div>
+    </div>
+  
+    <script>
+      const services = [
+        { text: "web applications", color: "text-yellow-300" },
+        { text: "mobile apps", color: "text-pink-300" },
+        { text: "AI-powered systems", color: "text-green-300" },
+        { text: "CRM & ERP platforms", color: "text-indigo-300" },
+        { text: "e-commerce websites", color: "text-red-300" },
+        { text: "custom software", color: "text-teal-300" }
+      ];
+  
+      let index = 0;
+      const dynamicEl = document.getElementById("dynamic-service");
+  
+      setInterval(() => {
+        // Fade out
+        dynamicEl.classList.add("opacity-0");
+  
+        setTimeout(() => {
+          // Change text and color
+          dynamicEl.textContent = services[index].text;
+          dynamicEl.className = `font-semibold transition-opacity duration-500 opacity-100 ${services[index].color}`;
+          index = (index + 1) % services.length;
+        }, 500); // Match the fade-out duration
+      }, 3000);
+    </script>
+  </section>
+  
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gradient-to-br from-white via-blue-50 to-white py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold text-blue-600 mb-4">Our Services</h2>
+      <p class="text-gray-600 mb-12 max-w-2xl mx-auto">We build custom digital products that help businesses grow and succeed across Africa.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="card p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">Web & Mobile Apps</h3>
+          <p class="text-gray-600">Modern and scalable apps tailored to your business needs.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">AI & Automation</h3>
+          <p class="text-gray-600">Use AI to automate tasks, make smarter decisions, and scale operations.</p>
+        </div>
+        <div class="card p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">Digital Marketing</h3>
+          <p class="text-gray-600">Boost visibility, engage customers, and grow your brand online.</p>
+        </div>
+        <div class="card p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">Custom Software</h3>
+          <p class="text-gray-600">Tailor-made tools that solve specific business problems.</p>
+        </div>
+        <div class="card p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">Identity Verification</h3>
+          <p class="text-gray-600">NIN/BVN verification and secure onboarding solutions.</p>
+        </div>
+        <div class="card p-6 rounded-2xl shadow hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">eCommerce Solutions</h3>
+          <p class="text-gray-600">Full-stack platforms for selling products and services online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section id="partners" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-8 text-blue-600">Our Partners</h2>
+      <p class="mb-12 text-gray-600">Trusted by startups, NGOs, and businesses across Africa</p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center">
+        <img src="{% static 'assets/images/about-us.jpg' %}" alt="Partner 1" class="mx-auto grayscale hover:grayscale-0 transition">
+        <img src="{% static 'assets/images/about-us.jpg' %}" alt="Partner 2" class="mx-auto grayscale hover:grayscale-0 transition">
+        <img src="https://via.placeholder.com/120x40?text=Partner+3" alt="Partner 3" class="mx-auto grayscale hover:grayscale-0 transition">
+        <img src="https://via.placeholder.com/120x40?text=Partner+4" alt="Partner 4" class="mx-auto grayscale hover:grayscale-0 transition">
+        <img src="https://via.placeholder.com/120x40?text=Partner+5" alt="Partner 5" class="mx-auto grayscale hover:grayscale-0 transition">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-12">What People Are Saying</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card card-bg bg-white text-gray-900 rounded-xl p-6 shadow-lg">
+          <p class="italic mb-4">“Ezydevs transformed our online presence. Their delivery was fast and top-notch.”</p>
+          <h4 class="font-bold text-blue-700">Sarah B.</h4>
+          <span class="text-sm text-gray-500">CEO, TechStarter</span>
+        </div>
+        <div class="card card-bg bg-white text-gray-900 rounded-xl p-6 shadow-lg">
+          <p class="italic mb-4">“Professional, affordable, and creative. We’ll definitely work with them again!”</p>
+          <h4 class="font-bold text-blue-700">Michael K.</h4>
+          <span class="text-sm text-gray-500">Founder, MarketMate</span>
+        </div>
+        <div class="card card-bg bg-white text-gray-900 rounded-xl p-6 shadow-lg">
+          <p class="italic mb-4">“They helped us launch an app that improved how we serve our customers.”</p>
+          <h4 class="font-bold text-blue-700">Linda E.</h4>
+          <span class="text-sm text-gray-500">Project Lead, HealthBridge</span>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

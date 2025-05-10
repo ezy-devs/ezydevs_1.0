@@ -1,0 +1,71 @@
+
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block title %}Our Team | Ezydevs Technologies{% endblock %}
+
+
+{% block content %}
+<body class="bg-gray-50 text-gray-800">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+      </style>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-2">Meet Our Team</h1>
+      <p class="text-lg">Innovators. Problem solvers. Visionaries behind Ezydevs Technologies.</p>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        
+        <!-- Team Member 1 -->
+        <div class="text-center bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img class="mx-auto mb-4 w-28 h-28 rounded-full object-cover" src="https://i.pravatar.cc/150?img=3" alt="Team Member">
+          <h3 class="text-xl font-semibold text-blue-900">Nzorov Emmanuel</h3>
+          <p class="text-sm text-gray-600 mb-3">Founder & CEO</p>
+          <div class="flex justify-center space-x-3 text-blue-600">
+            <a href="#"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 5.924a8.857 8.857 0 0 1-2.475.678A4.328 4.328 0 0 0 21.4 4.1a8.93 8.93 0 0 1-2.77 1.053 4.316 4.316 0 0 0-7.347 3.933 12.24 12.24 0 0 1-8.888-4.5A4.316 4.316 0 0 0 4.1 9.216a4.276 4.276 0 0 1-1.954-.538v.055a4.317 4.317 0 0 0 3.46 4.228 4.316 4.316 0 0 1-1.948.074 4.318 4.318 0 0 0 4.025 2.99 8.65 8.65 0 0 1-5.35 1.846A8.825 8.825 0 0 1 2 19.31a12.18 12.18 0 0 0 6.605 1.938c7.928 0 12.262-6.565 12.262-12.262 0-.187-.004-.373-.012-.559A8.794 8.794 0 0 0 22 5.924z"/></svg></a>
+            <a href="#"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.77 24 1.72 24h20.51c.96 0 1.72-.77 1.72-1.72V1.77C24 .78 23.23 0 22.23 0zM7.09 20.45H3.69V9h3.4v11.45zM5.39 7.52a1.97 1.97 0 1 1 .01-3.94 1.97 1.97 0 0 1-.01 3.94zM20.45 20.45h-3.4v-5.67c0-1.35-.03-3.09-1.89-3.09-1.89 0-2.18 1.48-2.18 3v5.76h-3.4V9h3.27v1.56h.05c.46-.87 1.59-1.79 3.27-1.79 3.5 0 4.14 2.3 4.14 5.29v6.39z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Repeat team members -->
+        <div class="text-center bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img class="mx-auto mb-4 w-28 h-28 rounded-full object-cover" src="https://i.pravatar.cc/150?img=7" alt="Team Member">
+          <h3 class="text-xl font-semibold text-blue-900">Nev Ignatius</h3>
+          <p class="text-sm text-gray-600 mb-3">Lead Frontend Developer</p>
+          <div class="flex justify-center space-x-3 text-blue-600">
+            <!-- social icons here -->
+          </div>
+        </div>
+
+        <div class="text-center bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img class="mx-auto mb-4 w-28 h-28 rounded-full object-cover" src="https://i.pravatar.cc/150?img=12" alt="Team Member">
+          <h3 class="text-xl font-semibold text-blue-900">Joshua Daniel</h3>
+          <p class="text-sm text-gray-600 mb-3">Backend Engineer</p>
+          <div class="flex justify-center space-x-3 text-blue-600">
+            <!-- social icons here -->
+          </div>
+        </div>
+
+        <!-- Add more team members as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-10 mt-10">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-xl font-bold mb-2">Ezydevs Technologies</h3>
+      <p class="mb-4">Simplifying technology for African businesses</p>
+      <p class="text-sm">© 2025 Ezydevs Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+{% endblock %}
